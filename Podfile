@@ -10,7 +10,7 @@ target 'WorldTweets' do
   pod 'KeychainSwift', '~> 19.0'
   pod 'SVProgressHUD'
   pod 'Simple-Networking'
-  pod 'Kingfisher', '~> 7.0'
+  pod 'Kingfisher', '7.0.0-beta.3'
   pod 'Firebase/Storage'
   pod 'Firebase/Analytics'
   pod 'Fabric'

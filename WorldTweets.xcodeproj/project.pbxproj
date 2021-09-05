@@ -3,27 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5B438A3E26E55B3D007437CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B438A3D26E55B3D007437CD /* AppDelegate.swift */; };
-		5B438A4026E55B3D007437CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B438A3F26E55B3D007437CD /* SceneDelegate.swift */; };
 		5B438A4226E55B3D007437CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B438A4126E55B3D007437CD /* ViewController.swift */; };
 		5B438A4526E55B3D007437CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4326E55B3D007437CD /* Main.storyboard */; };
 		5B438A4726E55B3F007437CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4626E55B3F007437CD /* Assets.xcassets */; };
 		5B438A4A26E55B3F007437CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4826E55B3F007437CD /* LaunchScreen.storyboard */; };
+		E039A45331EB26C7CC1D1123 /* Pods_WorldTweets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DDB5A31A440F5FECE2E1D6F /* Pods-WorldTweets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTweets.release.xcconfig"; path = "Target Support Files/Pods-WorldTweets/Pods-WorldTweets.release.xcconfig"; sourceTree = "<group>"; };
 		5B438A3A26E55B3D007437CD /* WorldTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B438A3D26E55B3D007437CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B438A3F26E55B3D007437CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5B438A4126E55B3D007437CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5B438A4426E55B3D007437CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B438A4626E55B3F007437CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B438A4926E55B3F007437CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B438A4B26E55B3F007437CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6019865370E609448C07D906 /* Pods-WorldTweets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTweets.debug.xcconfig"; path = "Target Support Files/Pods-WorldTweets/Pods-WorldTweets.debug.xcconfig"; sourceTree = "<group>"; };
+		E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldTweets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E039A45331EB26C7CC1D1123 /* Pods_WorldTweets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		466CBB281B9920A8B53A2A5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6019865370E609448C07D906 /* Pods-WorldTweets.debug.xcconfig */,
+				1DDB5A31A440F5FECE2E1D6F /* Pods-WorldTweets.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4A31CB3C5D678A27B66A95A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B438A3126E55B3D007437CD = {
 			isa = PBXGroup;
 			children = (
 				5B438A3C26E55B3D007437CD /* WorldTweets */,
 				5B438A3B26E55B3D007437CD /* Products */,
+				466CBB281B9920A8B53A2A5C /* Pods */,
+				4A31CB3C5D678A27B66A95A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				5B438A3D26E55B3D007437CD /* AppDelegate.swift */,
-				5B438A3F26E55B3D007437CD /* SceneDelegate.swift */,
 				5B438A4126E55B3D007437CD /* ViewController.swift */,
 				5B438A4326E55B3D007437CD /* Main.storyboard */,
 				5B438A4626E55B3F007437CD /* Assets.xcassets */,
@@ -74,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B438A4E26E55B3F007437CD /* Build configuration list for PBXNativeTarget "WorldTweets" */;
 			buildPhases = (
+				22D4BA33F67136DD7C95922A /* [CP] Check Pods Manifest.lock */,
 				5B438A3626E55B3D007437CD /* Sources */,
 				5B438A3726E55B3D007437CD /* Frameworks */,
 				5B438A3826E55B3D007437CD /* Resources */,
+				8F65CD820A84F3AA1B8FFE5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +155,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22D4BA33F67136DD7C95922A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorldTweets-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F65CD820A84F3AA1B8FFE5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorldTweets/Pods-WorldTweets-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorldTweets/Pods-WorldTweets-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorldTweets/Pods-WorldTweets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5B438A3626E55B3D007437CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -139,7 +204,6 @@
 			files = (
 				5B438A4226E55B3D007437CD /* ViewController.swift in Sources */,
 				5B438A3E26E55B3D007437CD /* AppDelegate.swift in Sources */,
-				5B438A4026E55B3D007437CD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +347,14 @@
 		};
 		5B438A4F26E55B3F007437CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6019865370E609448C07D906 /* Pods-WorldTweets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSD6BPXM52;
 				INFOPLIST_FILE = WorldTweets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,18 +362,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.david-jr.WorldTweets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5B438A5026E55B3F007437CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DDB5A31A440F5FECE2E1D6F /* Pods-WorldTweets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CSD6BPXM52;
 				INFOPLIST_FILE = WorldTweets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.david-jr.WorldTweets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
