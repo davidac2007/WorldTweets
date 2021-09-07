@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		5B438A3E26E55B3D007437CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B438A3D26E55B3D007437CD /* AppDelegate.swift */; };
 		5B438A4226E55B3D007437CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B438A4126E55B3D007437CD /* ViewController.swift */; };
-		5B438A4526E55B3D007437CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4326E55B3D007437CD /* Main.storyboard */; };
 		5B438A4726E55B3F007437CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4626E55B3F007437CD /* Assets.xcassets */; };
 		5B438A4A26E55B3F007437CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4826E55B3F007437CD /* LaunchScreen.storyboard */; };
+		5B4F8D6E26E719AF00AD7C70 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F8D6D26E719AF00AD7C70 /* Welcome.storyboard */; };
 		E039A45331EB26C7CC1D1123 /* Pods_WorldTweets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,10 +20,10 @@
 		5B438A3A26E55B3D007437CD /* WorldTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B438A3D26E55B3D007437CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B438A4126E55B3D007437CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5B438A4426E55B3D007437CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B438A4626E55B3F007437CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B438A4926E55B3F007437CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B438A4B26E55B3F007437CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B4F8D6D26E719AF00AD7C70 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		6019865370E609448C07D906 /* Pods-WorldTweets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTweets.debug.xcconfig"; path = "Target Support Files/Pods-WorldTweets/Pods-WorldTweets.debug.xcconfig"; sourceTree = "<group>"; };
 		E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldTweets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,14 +78,38 @@
 		5B438A3C26E55B3D007437CD /* WorldTweets */ = {
 			isa = PBXGroup;
 			children = (
-				5B438A3D26E55B3D007437CD /* AppDelegate.swift */,
-				5B438A4126E55B3D007437CD /* ViewController.swift */,
-				5B438A4326E55B3D007437CD /* Main.storyboard */,
-				5B438A4626E55B3F007437CD /* Assets.xcassets */,
-				5B438A4826E55B3F007437CD /* LaunchScreen.storyboard */,
+				5B4F8D6B26E7193A00AD7C70 /* Modules */,
+				5B4F8D6A26E7193200AD7C70 /* Shared */,
 				5B438A4B26E55B3F007437CD /* Info.plist */,
 			);
 			path = WorldTweets;
+			sourceTree = "<group>";
+		};
+		5B4F8D6A26E7193200AD7C70 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5B438A4126E55B3D007437CD /* ViewController.swift */,
+				5B438A4626E55B3F007437CD /* Assets.xcassets */,
+				5B438A3D26E55B3D007437CD /* AppDelegate.swift */,
+				5B438A4826E55B3F007437CD /* LaunchScreen.storyboard */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5B4F8D6B26E7193A00AD7C70 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5B4F8D6C26E7199D00AD7C70 /* Welcome */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5B4F8D6C26E7199D00AD7C70 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				5B4F8D6D26E719AF00AD7C70 /* Welcome.storyboard */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +173,7 @@
 			files = (
 				5B438A4A26E55B3F007437CD /* LaunchScreen.storyboard in Resources */,
 				5B438A4726E55B3F007437CD /* Assets.xcassets in Resources */,
-				5B438A4526E55B3D007437CD /* Main.storyboard in Resources */,
+				5B4F8D6E26E719AF00AD7C70 /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,14 +234,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5B438A4326E55B3D007437CD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B438A4426E55B3D007437CD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B438A4826E55B3F007437CD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
