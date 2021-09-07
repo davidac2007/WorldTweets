@@ -161,6 +161,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back3" translatesAutoresizingMaskIntoConstraints="NO" id="abw-g7-8qe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1Q-0P-7pi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40228999055774006" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="92l-WH-zvx">
                                 <rect key="frame" x="20" y="160" width="374" height="233"/>
                                 <subviews>
@@ -197,19 +204,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back3" translatesAutoresizingMaskIntoConstraints="NO" id="abw-g7-8qe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LYQ-dA-VFR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LYQ-dA-VFR" firstAttribute="trailing" secondItem="92l-WH-zvx" secondAttribute="trailing" constant="20" id="45M-I2-3md"/>
+                            <constraint firstAttribute="bottom" secondItem="l1Q-0P-7pi" secondAttribute="bottom" id="9kA-nX-HRi"/>
+                            <constraint firstItem="l1Q-0P-7pi" firstAttribute="leading" secondItem="LYQ-dA-VFR" secondAttribute="leading" id="Bvp-Ji-51C"/>
                             <constraint firstItem="abw-g7-8qe" firstAttribute="top" secondItem="Qoo-ra-ODn" secondAttribute="top" id="NTB-4f-JbR"/>
                             <constraint firstItem="LYQ-dA-VFR" firstAttribute="trailing" secondItem="abw-g7-8qe" secondAttribute="trailing" id="QVs-vb-LAJ"/>
                             <constraint firstAttribute="bottom" secondItem="abw-g7-8qe" secondAttribute="bottom" id="UxA-bC-dam"/>
                             <constraint firstItem="abw-g7-8qe" firstAttribute="leading" secondItem="Qoo-ra-ODn" secondAttribute="leading" id="ZaW-Da-gNu"/>
+                            <constraint firstItem="l1Q-0P-7pi" firstAttribute="top" secondItem="Qoo-ra-ODn" secondAttribute="top" id="aVN-JI-86o"/>
                             <constraint firstItem="92l-WH-zvx" firstAttribute="leading" secondItem="LYQ-dA-VFR" secondAttribute="leading" constant="20" id="eKR-35-IxM"/>
+                            <constraint firstItem="l1Q-0P-7pi" firstAttribute="trailing" secondItem="LYQ-dA-VFR" secondAttribute="trailing" id="f17-Ys-fv1"/>
                             <constraint firstItem="92l-WH-zvx" firstAttribute="top" secondItem="LYQ-dA-VFR" secondAttribute="top" constant="20" id="kXp-3r-XZu"/>
                         </constraints>
                     </view>
