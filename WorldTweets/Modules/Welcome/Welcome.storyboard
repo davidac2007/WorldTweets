@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="WelcomeViewController" customModule="WorldTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="57" id="Uj5-Do-L0N"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -90,6 +90,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a0J-LY-qWY"/>
+                    <connections>
+                        <outlet property="SignInButton" destination="uCg-ag-bFF" id="I71-LO-mJP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +101,7 @@
         <!--Sign In-->
         <scene sceneID="gl3-Cw-FcI">
             <objects>
-                <viewController id="Obh-uC-fGd" sceneMemberID="viewController">
+                <viewController id="Obh-uC-fGd" customClass="SignInViewController" customModule="WorldTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9O1-Zq-yfA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,6 +129,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInButtonAction" destination="Obh-uC-fGd" eventType="touchUpInside" id="o77-UW-Sgp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -148,6 +154,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="b64-EK-fgi"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="P5X-M4-r9w" id="Qr4-c4-bmc"/>
+                        <outlet property="passwordTextField" destination="ybz-tI-055" id="c8J-Cl-gAw"/>
+                        <outlet property="signInButton" destination="WNb-tk-qvG" id="gYe-hM-70w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwe-V7-I73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,7 +167,7 @@
         <!--Sign Up-->
         <scene sceneID="nIh-i7-ewF">
             <objects>
-                <viewController id="PEJ-vw-FhG" sceneMemberID="viewController">
+                <viewController id="PEJ-vw-FhG" customClass="SignUpViewController" customModule="WorldTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qoo-ra-ODn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,6 +233,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="Lzi-BZ-E45"/>
+                    <connections>
+                        <outlet property="signUpButton" destination="qA7-bG-dCH" id="Njm-Wc-fcp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R31-ER-MLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

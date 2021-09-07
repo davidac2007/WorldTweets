@@ -12,6 +12,9 @@
 		5B438A4726E55B3F007437CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4626E55B3F007437CD /* Assets.xcassets */; };
 		5B438A4A26E55B3F007437CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4826E55B3F007437CD /* LaunchScreen.storyboard */; };
 		5B4F8D6E26E719AF00AD7C70 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F8D6D26E719AF00AD7C70 /* Welcome.storyboard */; };
+		5BA2D3DF26E7DE2100700C90 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */; };
+		5BA2D3E126E7EC1000700C90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */; };
+		5BA2D3E326E7EC2300700C90 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */; };
 		E039A45331EB26C7CC1D1123 /* Pods_WorldTweets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,9 @@
 		5B438A4926E55B3F007437CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B438A4B26E55B3F007437CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4F8D6D26E719AF00AD7C70 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6019865370E609448C07D906 /* Pods-WorldTweets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTweets.debug.xcconfig"; path = "Target Support Files/Pods-WorldTweets/Pods-WorldTweets.debug.xcconfig"; sourceTree = "<group>"; };
 		E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldTweets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				5B4F8D6D26E719AF00AD7C70 /* Welcome.storyboard */,
+				5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */,
+				5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */,
+				5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -226,8 +235,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA2D3E126E7EC1000700C90 /* SignInViewController.swift in Sources */,
+				5BA2D3DF26E7DE2100700C90 /* WelcomeViewController.swift in Sources */,
 				5B438A4226E55B3D007437CD /* ViewController.swift in Sources */,
 				5B438A3E26E55B3D007437CD /* AppDelegate.swift in Sources */,
+				5BA2D3E326E7EC2300700C90 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
