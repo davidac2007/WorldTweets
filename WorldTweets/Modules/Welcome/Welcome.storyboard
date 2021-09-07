@@ -55,6 +55,9 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="PEJ-vw-FhG" kind="show" id="3xO-RF-ocn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.58296638135088985" colorSpace="custom" customColorSpace="displayP3"/>
@@ -150,20 +153,71 @@
             </objects>
             <point key="canvasLocation" x="1444.9275362318842" y="-240.40178571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up-->
         <scene sceneID="nIh-i7-ewF">
             <objects>
                 <viewController id="PEJ-vw-FhG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qoo-ra-ODn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="92l-WH-zvx">
+                                <rect key="frame" x="20" y="160" width="374" height="233"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YMd-5J-auI">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdC-vp-cB1">
+                                        <rect key="frame" x="0.0" y="44" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZMa-1h-TMu">
+                                        <rect key="frame" x="0.0" y="88" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ely-rY-f3P">
+                                        <rect key="frame" x="0.0" y="132" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qA7-bG-dCH">
+                                        <rect key="frame" x="0.0" y="176" width="374" height="57"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="HMd-rh-8nR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back3" translatesAutoresizingMaskIntoConstraints="NO" id="abw-g7-8qe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LYQ-dA-VFR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LYQ-dA-VFR" firstAttribute="trailing" secondItem="92l-WH-zvx" secondAttribute="trailing" constant="20" id="45M-I2-3md"/>
+                            <constraint firstItem="abw-g7-8qe" firstAttribute="top" secondItem="Qoo-ra-ODn" secondAttribute="top" id="NTB-4f-JbR"/>
+                            <constraint firstItem="LYQ-dA-VFR" firstAttribute="trailing" secondItem="abw-g7-8qe" secondAttribute="trailing" id="QVs-vb-LAJ"/>
+                            <constraint firstAttribute="bottom" secondItem="abw-g7-8qe" secondAttribute="bottom" id="UxA-bC-dam"/>
+                            <constraint firstItem="abw-g7-8qe" firstAttribute="leading" secondItem="Qoo-ra-ODn" secondAttribute="leading" id="ZaW-Da-gNu"/>
+                            <constraint firstItem="92l-WH-zvx" firstAttribute="leading" secondItem="LYQ-dA-VFR" secondAttribute="leading" constant="20" id="eKR-35-IxM"/>
+                            <constraint firstItem="92l-WH-zvx" firstAttribute="top" secondItem="LYQ-dA-VFR" secondAttribute="top" constant="20" id="kXp-3r-XZu"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Sign Up" id="Lzi-BZ-E45"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R31-ER-MLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1447.8260869565217" y="462.72321428571428"/>
+            <point key="canvasLocation" x="1446.376811594203" y="462.72321428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1QO-1h-7Tv">
@@ -185,6 +239,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back3" width="640" height="426.5"/>
         <image name="bottomImage" width="351.5" height="123"/>
         <image name="loginBg" width="640" height="425"/>
         <systemColor name="systemBackgroundColor">
