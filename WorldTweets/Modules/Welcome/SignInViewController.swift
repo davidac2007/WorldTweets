@@ -18,6 +18,7 @@ class SignInViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func signInButtonAction(){
+        view.endEditing(true)
         performLogin()
         
     }
@@ -48,7 +49,10 @@ class SignInViewController: UIViewController {
             return
         }
         
+        //    performLogin
+        performSegue(withIdentifier: "showHome", sender: nil)
     }
     
+
     
 }

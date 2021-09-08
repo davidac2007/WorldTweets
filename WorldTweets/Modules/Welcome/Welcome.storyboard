@@ -158,11 +158,20 @@
                         <outlet property="emailTextField" destination="P5X-M4-r9w" id="Qr4-c4-bmc"/>
                         <outlet property="passwordTextField" destination="ybz-tI-055" id="c8J-Cl-gAw"/>
                         <outlet property="signInButton" destination="WNb-tk-qvG" id="gYe-hM-70w"/>
+                        <segue destination="PQN-Dk-zef" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="GUN-h5-5Jw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwe-V7-I73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1444.9275362318842" y="-240.40178571428569"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="RS0-Sc-3tF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="PQN-Dk-zef" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zna-FQ-Qis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2380" y="175"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="nIh-i7-ewF">
@@ -212,6 +221,9 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUpButtonAction" destination="PEJ-vw-FhG" eventType="touchUpInside" id="3Te-4P-BF6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -234,12 +246,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="Lzi-BZ-E45"/>
                     <connections>
+                        <outlet property="confirmPasswordTextField" destination="ely-rY-f3P" id="PPE-IB-hGu"/>
+                        <outlet property="emailTextField" destination="bdC-vp-cB1" id="8te-O2-MXe"/>
+                        <outlet property="nameTextField" destination="YMd-5J-auI" id="SUO-NO-stF"/>
+                        <outlet property="passwordTextField" destination="ZMa-1h-TMu" id="3eU-K9-tMj"/>
                         <outlet property="signUpButton" destination="qA7-bG-dCH" id="Njm-Wc-fcp"/>
+                        <segue destination="PQN-Dk-zef" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="v5a-Qb-90k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R31-ER-MLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446.376811594203" y="462.72321428571428"/>
+            <point key="canvasLocation" x="1445" y="565"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1QO-1h-7Tv">
@@ -260,6 +277,9 @@
             <point key="canvasLocation" x="-500.00000000000006" y="81.696428571428569"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GUN-h5-5Jw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="back3" width="640" height="426.5"/>
         <image name="bottomImage" width="351.5" height="123"/>

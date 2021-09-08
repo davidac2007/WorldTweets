@@ -15,6 +15,7 @@
 		5BA2D3DF26E7DE2100700C90 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */; };
 		5BA2D3E126E7EC1000700C90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */; };
 		5BA2D3E326E7EC2300700C90 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */; };
+		5BB66F1A26E8734B00590F9E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB66F1926E8734B00590F9E /* Home.storyboard */; };
 		E039A45331EB26C7CC1D1123 /* Pods_WorldTweets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5BB66F1926E8734B00590F9E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		6019865370E609448C07D906 /* Pods-WorldTweets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorldTweets.debug.xcconfig"; path = "Target Support Files/Pods-WorldTweets/Pods-WorldTweets.debug.xcconfig"; sourceTree = "<group>"; };
 		E0078650D1BBE8D5081E7F64 /* Pods_WorldTweets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorldTweets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 		5B4F8D6B26E7193A00AD7C70 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5BB66F1826E8734000590F9E /* Home */,
 				5B4F8D6C26E7199D00AD7C70 /* Welcome */,
 			);
 			path = Modules;
@@ -119,6 +122,14 @@
 				5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		5BB66F1826E8734000590F9E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5BB66F1926E8734B00590F9E /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				5B438A4A26E55B3F007437CD /* LaunchScreen.storyboard in Resources */,
 				5B438A4726E55B3F007437CD /* Assets.xcassets in Resources */,
 				5B4F8D6E26E719AF00AD7C70 /* Welcome.storyboard in Resources */,
+				5BB66F1A26E8734B00590F9E /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
