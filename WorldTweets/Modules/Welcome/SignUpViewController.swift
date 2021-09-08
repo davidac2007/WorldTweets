@@ -40,19 +40,26 @@ class SignUpViewController: UIViewController {
     
     private func performSignUp(){
         
+        func isValidEmail(_ email: String) -> Bool {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+            let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailPred.evaluate(with: email)
+        }
+        
         guard let name = nameTextField.text,
               !name.isEmpty else {
             NotificationBanner(title: "Error", subtitle: "Please enter your name",style: .warning).show()
             return
         }
         
-        guard let email = emailTextField.text, !email.isEmpty else {
+        guard let email = emailTextField.text, !email.isEmpty && isValidEmail(email) else {
             NotificationBanner(title: "Error", subtitle: "Enter a valid email",style: .warning).show()
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else{
-            NotificationBanner(title: "Error", subtitle: "The password is incorrect",style: .warning).show()
+            NotificationBanner(title: "Error", subtitle: "Enter a valid password",style: .warning).show()
             return
         }
         
@@ -60,11 +67,10 @@ class SignUpViewController: UIViewController {
             NotificationBanner(title: "Error", subtitle: "The passwords doesn't match",style: .warning).show()
             return
         }
-        
+      
         // Perform Sign Up
         performSegue(withIdentifier: "showHome", sender: nil)
-        
-        
+    
     }
 }
     
