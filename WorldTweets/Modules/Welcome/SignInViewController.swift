@@ -58,7 +58,4 @@ class SignInViewController: UIViewController {
         //    performLogin
         performSegue(withIdentifier: "showHome", sender: nil)
     }
-    
-
-    
 }
