@@ -9,9 +9,9 @@ import Foundation
 
 struct PostTweetsRequest{
     let text: String
-    let imageUrl: String
-    let videoUrl: String
-    let location: Location
+    let imageUrl: String?
+    let videoUrl: String?
+    let location: Location?
 }
 
 struct PostTweetsResponse{

@@ -106,7 +106,6 @@
 		5B438A3C26E55B3D007437CD /* WorldTweets */ = {
 			isa = PBXGroup;
 			children = (
-				5B7C3EFA26E9B275001ABEE5 /* Models */,
 				5B4F8D6B26E7193A00AD7C70 /* Modules */,
 				5B4F8D6A26E7193200AD7C70 /* Shared */,
 				5B438A4B26E55B3F007437CD /* Info.plist */,
@@ -117,6 +116,7 @@
 		5B4F8D6A26E7193200AD7C70 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5B7C3EFA26E9B275001ABEE5 /* Models */,
 				5B438A4126E55B3D007437CD /* ViewController.swift */,
 				5B438A4626E55B3F007437CD /* Assets.xcassets */,
 				5B438A3D26E55B3D007437CD /* AppDelegate.swift */,
