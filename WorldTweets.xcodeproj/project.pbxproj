@@ -19,6 +19,9 @@
 		5B7C3F0226E9B46B001ABEE5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3F0126E9B46B001ABEE5 /* User.swift */; };
 		5B7C3F0626E9B61E001ABEE5 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3F0526E9B61E001ABEE5 /* SignUpRequest.swift */; };
 		5B7C3F0826E9B6A6001ABEE5 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3F0726E9B6A6001ABEE5 /* SignUpResponse.swift */; };
+		5B7C3F0B26E9B8DD001ABEE5 /* GetTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3F0A26E9B8DD001ABEE5 /* GetTweets.swift */; };
+		5B7C3F0D26E9BB17001ABEE5 /* PostViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3F0C26E9BB17001ABEE5 /* PostViews.swift */; };
+		5B7C3F0F26E9BD7C001ABEE5 /* DeleteTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3F0E26E9BD7C001ABEE5 /* DeleteTweets.swift */; };
 		5BA2D3DF26E7DE2100700C90 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */; };
 		5BA2D3E126E7EC1000700C90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */; };
 		5BA2D3E326E7EC2300700C90 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */; };
@@ -42,6 +45,9 @@
 		5B7C3F0126E9B46B001ABEE5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5B7C3F0526E9B61E001ABEE5 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		5B7C3F0726E9B6A6001ABEE5 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		5B7C3F0A26E9B8DD001ABEE5 /* GetTweets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTweets.swift; sourceTree = "<group>"; };
+		5B7C3F0C26E9BB17001ABEE5 /* PostViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViews.swift; sourceTree = "<group>"; };
+		5B7C3F0E26E9BD7C001ABEE5 /* DeleteTweets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTweets.swift; sourceTree = "<group>"; };
 		5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -143,13 +149,14 @@
 		5B7C3EFA26E9B275001ABEE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5B7C3F0426E9B5D8001ABEE5 /* Sign Up */,
-				5B7C3F0326E9B5AC001ABEE5 /* Sign In */,
+				5B7C3F0926E9B8BB001ABEE5 /* Tweets */,
+				5B7C3F0426E9B5D8001ABEE5 /* SignUp */,
+				5B7C3F0326E9B5AC001ABEE5 /* SignIn */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5B7C3F0326E9B5AC001ABEE5 /* Sign In */ = {
+		5B7C3F0326E9B5AC001ABEE5 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
 				5B7C3EFB26E9B308001ABEE5 /* LoginRequest.swift */,
@@ -157,16 +164,26 @@
 				5B7C3EFF26E9B44B001ABEE5 /* ErrorResponse.swift */,
 				5B7C3EFD26E9B35D001ABEE5 /* LoginResponse.swift */,
 			);
-			path = "Sign In";
+			path = SignIn;
 			sourceTree = "<group>";
 		};
-		5B7C3F0426E9B5D8001ABEE5 /* Sign Up */ = {
+		5B7C3F0426E9B5D8001ABEE5 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				5B7C3F0526E9B61E001ABEE5 /* SignUpRequest.swift */,
 				5B7C3F0726E9B6A6001ABEE5 /* SignUpResponse.swift */,
 			);
-			path = "Sign Up";
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		5B7C3F0926E9B8BB001ABEE5 /* Tweets */ = {
+			isa = PBXGroup;
+			children = (
+				5B7C3F0A26E9B8DD001ABEE5 /* GetTweets.swift */,
+				5B7C3F0C26E9BB17001ABEE5 /* PostViews.swift */,
+				5B7C3F0E26E9BD7C001ABEE5 /* DeleteTweets.swift */,
+			);
+			path = Tweets;
 			sourceTree = "<group>";
 		};
 		5BB66F1826E8734000590F9E /* Home */ = {
@@ -301,8 +318,11 @@
 				5B7C3EFC26E9B308001ABEE5 /* LoginRequest.swift in Sources */,
 				5B7C3F0026E9B44B001ABEE5 /* ErrorResponse.swift in Sources */,
 				5B7C3EFE26E9B35D001ABEE5 /* LoginResponse.swift in Sources */,
+				5B7C3F0B26E9B8DD001ABEE5 /* GetTweets.swift in Sources */,
 				5B7C3F0626E9B61E001ABEE5 /* SignUpRequest.swift in Sources */,
 				5B7C3F0226E9B46B001ABEE5 /* User.swift in Sources */,
+				5B7C3F0F26E9BD7C001ABEE5 /* DeleteTweets.swift in Sources */,
+				5B7C3F0D26E9BB17001ABEE5 /* PostViews.swift in Sources */,
 				5BA2D3E326E7EC2300700C90 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
