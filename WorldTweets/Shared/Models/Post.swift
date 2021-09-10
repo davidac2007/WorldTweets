@@ -7,27 +7,16 @@
 
 import Foundation
 
-struct GetTweets: Codable{
+struct Post: Codable{
     let id: String
-    let author: Author
+    let author: User
     let imageUrl: String
     let text: String
     let videoUrl: String
-    let location: Location
+    let location: PostLocation
     let hasVideo: Bool
     let hasImage: Bool
     let hasLocation: Bool
     let createdAt: String
-}
-
-struct Author: Codable{
-    let email: String
-    let names: String
-    let nickname: String
-}
-
-struct Location: Codable{
-    let latitude: Double
-    let longitude: Double
 }
 
