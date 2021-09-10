@@ -7,6 +7,8 @@
 
 import UIKit
 import NotificationBannerSwift
+import Simple_Networking
+import SVProgressHUD
 
 class SignInViewController: UIViewController {
     // MARK: - Outlets
@@ -55,7 +57,32 @@ class SignInViewController: UIViewController {
             return
         }
         
+        // Create request
+        let request = LoginRequest(email: email, password: password)
+        
+        // Start loading spinner
+        SVProgressHUD.show()
+        
+        // Call Networking Library
+        SN.post(endpoint: Endpoints.login, model: request) {(response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
+            
+            switch response {
+                case .success(let user):
+                    NotificationBanner(subtitle: "Welcome \(user.user.names)",style: .success).show()
+                    SVProgressHUD.dismiss()
+                case .error(let error):
+                    
+                    
+                    break
+            case .errorResult(let entity):
+                
+                
+                break
+            }
+            
+        }
+        
         //    performLogin
-        performSegue(withIdentifier: "showHome", sender: nil)
+//        performSegue(withIdentifier: "showHome", sender: nil)
     }
 }
