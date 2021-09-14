@@ -66,22 +66,26 @@ class SignInViewController: UIViewController {
         // Call Networking Library
         SN.post(endpoint: Endpoints.login, model: request) {(response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
             
+            SVProgressHUD.dismiss()
             switch response {
+                // Success login
                 case .success(let user):
                     NotificationBanner(subtitle: "Welcome \(user.user.names)",style: .success).show()
-                    SVProgressHUD.dismiss()
+                  
                     // Perform login
                     self.performSegue(withIdentifier: "showHome", sender: nil)
+                // Unknown errors
                 case .error(let error):
                     NotificationBanner(title: "Error",
                                        subtitle: error.localizedDescription,
                                        style: .danger).show()
-                    SVProgressHUD.dismiss()
+        
+                // Errrors from the server
                 case .errorResult(let entity):
                     NotificationBanner(title: "Error",
                                     subtitle: entity.error,
                                     style: .warning).show()
-                    SVProgressHUD.dismiss()
+                  
             }
         }
     }

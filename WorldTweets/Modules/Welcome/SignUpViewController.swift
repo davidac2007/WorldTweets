@@ -7,6 +7,8 @@
 
 import UIKit
 import NotificationBannerSwift
+import Simple_Networking
+import SVProgressHUD
 
 class SignUpViewController: UIViewController {
     // MARK: - Outlets
@@ -67,10 +69,42 @@ class SignUpViewController: UIViewController {
             NotificationBanner(title: "Error", subtitle: "The passwords doesn't match",style: .warning).show()
             return
         }
+        
+        // Create request
+        let request = SignUpRequest(email: email, password: password, names: name)
       
+        SVProgressHUD.show()
+        
+        // Call service
+        
+        SN.post(endpoint: Endpoints.signUp, model: request) {(response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
+            
+            SVProgressHUD.dismiss()
+            
+            switch response {
+                // Success login
+                case .success(let user):
+                    NotificationBanner(subtitle: "Welcome \(user.user.names)",style: .success).show()
+                   
+                    // Perform login
+                    self.performSegue(withIdentifier: "showHome", sender: nil)
+                // Unknown errors
+                case .error(let error):
+                    NotificationBanner(title: "Error",
+                                       subtitle: error.localizedDescription,
+                                       style: .danger).show()
+                   
+                // Errrors from the server
+                case .errorResult(let entity):
+                    NotificationBanner(title: "Error",
+                                    subtitle: entity.error,
+                                    style: .warning).show()
+                    
+            }
         // Perform Sign Up
-        performSegue(withIdentifier: "showHome", sender: nil)
+//        performSegue(withIdentifier: "showHome", sender: nil)
     
     }
+   }
 }
     
