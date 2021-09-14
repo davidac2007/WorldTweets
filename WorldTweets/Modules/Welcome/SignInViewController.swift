@@ -70,19 +70,19 @@ class SignInViewController: UIViewController {
                 case .success(let user):
                     NotificationBanner(subtitle: "Welcome \(user.user.names)",style: .success).show()
                     SVProgressHUD.dismiss()
+                    // Perform login
+                    self.performSegue(withIdentifier: "showHome", sender: nil)
                 case .error(let error):
-                    
-                    
-                    break
-            case .errorResult(let entity):
-                
-                
-                break
+                    NotificationBanner(title: "Error",
+                                       subtitle: error.localizedDescription,
+                                       style: .danger).show()
+                    SVProgressHUD.dismiss()
+                case .errorResult(let entity):
+                    NotificationBanner(title: "Error",
+                                    subtitle: entity.error,
+                                    style: .warning).show()
+                    SVProgressHUD.dismiss()
             }
-            
         }
-        
-        //    performLogin
-//        performSegue(withIdentifier: "showHome", sender: nil)
     }
 }
