@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
     private func setupUI(){
         
         signUpButton.layer.cornerRadius = 25
-
+        emailTextField.autocorrectionType = .no
     }
     
     private func performSignUp(){
@@ -88,6 +88,8 @@ class SignUpViewController: UIViewController {
                    
                     // Perform login
                     self.performSegue(withIdentifier: "showHome", sender: nil)
+                    SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
+
                 // Unknown errors
                 case .error(let error):
                     NotificationBanner(title: "Error",

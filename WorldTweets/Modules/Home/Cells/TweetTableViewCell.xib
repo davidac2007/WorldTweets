@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvt-ao-IVw">
-                                <rect key="frame" x="0.0" y="79.5" width="122" height="19.5"/>
+                                <rect key="frame" x="0.0" y="79.5" width="402" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xc-81-6cG">
-                                <rect key="frame" x="0.0" y="336.5" width="126" height="22"/>
+                                <rect key="frame" x="0.0" y="336.5" width="402" height="22"/>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Watch Video" image="video.fill" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,6 +59,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="6Xc-81-6cG" firstAttribute="leading" secondItem="fem-2B-2P2" secondAttribute="leading" id="FCB-fX-S6T"/>
+                            <constraint firstAttribute="trailing" secondItem="6Xc-81-6cG" secondAttribute="trailing" id="Vtn-8F-hLa"/>
+                            <constraint firstItem="xvt-ao-IVw" firstAttribute="leading" secondItem="fem-2B-2P2" secondAttribute="leading" id="Wmn-W6-QxA"/>
+                            <constraint firstAttribute="trailing" secondItem="xvt-ao-IVw" secondAttribute="trailing" id="s22-49-DxE"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
