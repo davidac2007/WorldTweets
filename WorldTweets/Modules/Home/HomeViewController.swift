@@ -58,7 +58,6 @@ class HomeViewController: UIViewController {
                     NotificationBanner(title: "Error",
                                     subtitle: entity.error,
                                     style: .warning).show()
-                    
             }
             
         }
