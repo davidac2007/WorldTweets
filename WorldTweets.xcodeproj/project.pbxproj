@@ -12,6 +12,7 @@
 		5B438A4726E55B3F007437CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4626E55B3F007437CD /* Assets.xcassets */; };
 		5B438A4A26E55B3F007437CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B438A4826E55B3F007437CD /* LaunchScreen.storyboard */; };
 		5B4F8D6E26E719AF00AD7C70 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4F8D6D26E719AF00AD7C70 /* Welcome.storyboard */; };
+		5B53F54F26F44ED5009F9BEF /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B53F54E26F44ED5009F9BEF /* AddPostViewController.swift */; };
 		5B7C3EF926E9B1B9001ABEE5 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3EF826E9B1B9001ABEE5 /* Endpoints.swift */; };
 		5B7C3EFC26E9B308001ABEE5 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3EFB26E9B308001ABEE5 /* LoginRequest.swift */; };
 		5B7C3EFE26E9B35D001ABEE5 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C3EFD26E9B35D001ABEE5 /* LoginResponse.swift */; };
@@ -42,6 +43,7 @@
 		5B438A4926E55B3F007437CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B438A4B26E55B3F007437CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4F8D6D26E719AF00AD7C70 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		5B53F54E26F44ED5009F9BEF /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		5B7C3EF826E9B1B9001ABEE5 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		5B7C3EFB26E9B308001ABEE5 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		5B7C3EFD26E9B35D001ABEE5 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				5BB66F1926E8734B00590F9E /* Home.storyboard */,
 				5B85651526F1A74A00CAD68D /* Cells */,
 				5B85651326F1A5B200CAD68D /* HomeViewController.swift */,
+				5B53F54E26F44ED5009F9BEF /* AddPostViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				5BA2D3E126E7EC1000700C90 /* SignInViewController.swift in Sources */,
 				5BA2D3DF26E7DE2100700C90 /* WelcomeViewController.swift in Sources */,
 				5B438A4226E55B3D007437CD /* ViewController.swift in Sources */,
+				5B53F54F26F44ED5009F9BEF /* AddPostViewController.swift in Sources */,
 				5B85651426F1A5B200CAD68D /* HomeViewController.swift in Sources */,
 				5B438A3E26E55B3D007437CD /* AppDelegate.swift in Sources */,
 				5B7C3EF926E9B1B9001ABEE5 /* Endpoints.swift in Sources */,
