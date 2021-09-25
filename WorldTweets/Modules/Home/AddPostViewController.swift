@@ -49,7 +49,7 @@ class AddPostViewController: UIViewController {
                 // Success login
                 case .success:
                     self.dismiss(animated: true, completion: nil)
-                    
+                    SVProgressHUD.dismiss()
                 // Unknown errors
                 case .error(let error):
                     NotificationBanner(title: "Error",

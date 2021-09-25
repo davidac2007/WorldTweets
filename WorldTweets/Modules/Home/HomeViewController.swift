@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     private func setupUI(){
         // Assign data source
         // Register cell
-        
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)
         
@@ -66,6 +66,56 @@ class HomeViewController: UIViewController {
             }
             
         }
+    }
+    
+    private func deletePostAt(indexPath: IndexPath){
+        // Show loading
+        SVProgressHUD.show()
+        
+        // Get post ID to be deleted
+        let postId = dataSource[indexPath.row].id
+        
+        // Call API to delete post
+        let endpoint = Endpoints.delete + postId
+        
+        SN.delete(endpoint: endpoint) { (result: SNResultWithEntity<GeneralResponse, ErrorResponse>) in
+        
+            switch result {
+                // Success login
+                case .success(let posts):
+                    // Delete post from data source
+                self.dataSource.remove(at: indexPath.row)
+                    // Delete cell from table
+                self.tableView.deleteRows(at: [indexPath], with: .left)
+                    // Unknown errors
+                case .error(let error):
+                    NotificationBanner(title: "Error",
+                                       subtitle: error.localizedDescription,
+                                       style: .danger).show()
+                   
+                // Errrors from the server
+                case .errorResult(let entity):
+                    NotificationBanner(title: "Error",
+                                    subtitle: entity.error,
+                                    style: .warning).show()
+            }
+            
+            
+        }
+    }
+}
+
+extension HomeViewController: UITableViewDelegate{
+    // Actions that can be executed for each cell
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAcrtion = UITableViewRowAction(style: UITableViewRowAction.Style.destructive, title: "Delete") { (_, _) in
+            // Deleted tweet
+            self.deletePostAt(indexPath: indexPath)
+        }
+        return [deleteAcrtion]
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return self.dataSource[indexPath.row].author.email != "test1930@test.com"
     }
 }
 
