@@ -17,7 +17,7 @@ class AddPostViewController: UIViewController {
     
     
     //MARK: - IBActions
-    
+   
     @IBAction func addPostAction(){
         savePost()
     }
@@ -28,7 +28,7 @@ class AddPostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        view.layer.cornerRadius = 20.0
         // Do any additional setup after loading the view.
     }
     
@@ -49,7 +49,7 @@ class AddPostViewController: UIViewController {
                 // Success login
                 case .success:
                     self.dismiss(animated: true, completion: nil)
-                    SVProgressHUD.dismiss()
+                    
                 // Unknown errors
                 case .error(let error):
                     NotificationBanner(title: "Error",
@@ -65,15 +65,4 @@ class AddPostViewController: UIViewController {
         }
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

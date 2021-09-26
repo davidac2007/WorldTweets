@@ -72,6 +72,8 @@ class SignUpViewController: UIViewController {
         
         // Create request
         let request = SignUpRequest(email: email, password: password, names: name)
+        
+        let defaults = UserDefaults.standard
       
         SVProgressHUD.show()
         
@@ -85,7 +87,11 @@ class SignUpViewController: UIViewController {
                 // Success login
                 case .success(let user):
                     NotificationBanner(subtitle: "Welcome \(user.user.names)",style: .success).show()
-                   
+                
+                    defaults.set(email, forKey: "email")
+                    let currentEmail = defaults.string(forKey: "email")
+                    print("This is the current email: \(currentEmail ?? "")")
+                
                     // Perform login
                     self.performSegue(withIdentifier: "showHome", sender: nil)
                     SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
