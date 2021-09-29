@@ -28,7 +28,7 @@
 		5BA2D3DF26E7DE2100700C90 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */; };
 		5BA2D3E126E7EC1000700C90 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */; };
 		5BA2D3E326E7EC2300700C90 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */; };
-		5BAFA12A2704293E00F157F8 /* GoogleService-Info (2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BAFA1292704293E00F157F8 /* GoogleService-Info (2).plist */; };
+		5BAFA12C27042B9300F157F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BAFA12B27042B9300F157F8 /* GoogleService-Info.plist */; };
 		5BB66F1A26E8734B00590F9E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB66F1926E8734B00590F9E /* Home.storyboard */; };
 		5BCDE6DF26EB14DB005C4A58 /* PostRequestLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDE6DE26EB14DB005C4A58 /* PostRequestLocation.swift */; };
 		5BCDE6E326EB1C00005C4A58 /* PostLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDE6E226EB1C00005C4A58 /* PostLocation.swift */; };
@@ -60,7 +60,7 @@
 		5BA2D3DE26E7DE2100700C90 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5BA2D3E026E7EC1000700C90 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5BA2D3E226E7EC2300700C90 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		5BAFA1292704293E00F157F8 /* GoogleService-Info (2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (2).plist"; path = "../../../../../Downloads/GoogleService-Info (2).plist"; sourceTree = "<group>"; };
+		5BAFA12B27042B9300F157F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BB66F1926E8734B00590F9E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5BCDE6DE26EB14DB005C4A58 /* PostRequestLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequestLocation.swift; sourceTree = "<group>"; };
 		5BCDE6E226EB1C00005C4A58 /* PostLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocation.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 				5B4F8D6B26E7193A00AD7C70 /* Modules */,
 				5B4F8D6A26E7193200AD7C70 /* Shared */,
 				5B438A4B26E55B3F007437CD /* Info.plist */,
-				5BAFA1292704293E00F157F8 /* GoogleService-Info (2).plist */,
+				5BAFA12B27042B9300F157F8 /* GoogleService-Info.plist */,
 			);
 			path = WorldTweets;
 			sourceTree = "<group>";
@@ -275,8 +275,8 @@
 				5B438A4A26E55B3F007437CD /* LaunchScreen.storyboard in Resources */,
 				5B438A4726E55B3F007437CD /* Assets.xcassets in Resources */,
 				5B4F8D6E26E719AF00AD7C70 /* Welcome.storyboard in Resources */,
-				5BAFA12A2704293E00F157F8 /* GoogleService-Info (2).plist in Resources */,
 				5BB66F1A26E8734B00590F9E /* Home.storyboard in Resources */,
+				5BAFA12C27042B9300F157F8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
