@@ -34,7 +34,6 @@ class AddPostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.layer.cornerRadius = 20.0
         // Do any additional setup after loading the view.
     }
     
