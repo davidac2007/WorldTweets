@@ -55,7 +55,8 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        guard let email = emailTextField.text, !email.isEmpty && isValidEmail(email) else {
+        guard let email = emailTextField.text,
+              !email.isEmpty && isValidEmail(email) else {
             NotificationBanner(title: "Error", subtitle: "Enter a valid email",style: .warning).show()
             return
         }

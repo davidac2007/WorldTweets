@@ -33,6 +33,7 @@ class TweetTableViewCell: UITableViewCell {
         nameLabel.text = post.author.names
         nicknameLabel.text = post.author.nickname
         messageLabel.text = post.text
+        videoButton.isHidden = post.videoUrl.isEmpty
         
         if post.hasImage{
             // Setup image
