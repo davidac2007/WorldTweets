@@ -23,15 +23,18 @@ class AddPostViewController: UIViewController {
     
     //MARK: - IBActions
     
+     var isPicture: Bool!
+    
     @IBAction func addPostAction(){
         // uploadPicture()
         // openVideoCamera()
-        uploadVideo()
+        uploadMedia(isCamera: isPicture)
     }
     
     @IBAction func dismissAction(){
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func openCameraAction() {
         
         let alert = UIAlertController(title: "Source",
@@ -39,10 +42,13 @@ class AddPostViewController: UIViewController {
                                       preferredStyle: UIAlertController.Style.actionSheet)
         
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+       
             self.openCamera()
+            
         }))
         
         alert.addAction(UIAlertAction(title: "Video", style: .default, handler: { _ in
+           
             self.openVideoCamera()
             
         }))
@@ -57,7 +63,7 @@ class AddPostViewController: UIViewController {
         guard let currentVideoURL = currentVideoUrl else{
             return
         }
-        
+
         let avPlayer = AVPlayer(url: currentVideoURL)
         let avPLayerController = AVPlayerViewController()
         
@@ -68,7 +74,6 @@ class AddPostViewController: UIViewController {
         }
     }
     
-    
     // MARK: - Properties
     private var imagePicker: UIImagePickerController?
     private var currentVideoUrl: URL?
@@ -77,7 +82,6 @@ class AddPostViewController: UIViewController {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         watchVideoButton.isHidden = true
-        // Do any additional setup after loading the view.
     }
     
     private func openVideoCamera(){
@@ -87,17 +91,12 @@ class AddPostViewController: UIViewController {
         imagePicker?.cameraFlashMode = .off
         imagePicker?.cameraCaptureMode = .video
         imagePicker?.videoQuality = .typeMedium
-        imagePicker?.videoMaximumDuration = TimeInterval(5)
+        imagePicker?.videoMaximumDuration = TimeInterval(8)
         imagePicker?.allowsEditing = true
         imagePicker?.delegate = self
         
-        
-        guard let imagePicker = imagePicker else {
-            return
-        }
-        
+        guard let imagePicker = imagePicker else { return }
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
     private func openCamera(){
@@ -111,39 +110,47 @@ class AddPostViewController: UIViewController {
         guard let imagePicker = imagePicker else {
             return
         }
-        
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
     // Make this two functions a single one
     
-    private func uploadPicture(){
-        // Make sure the picture exists
+    private func uploadMedia(isCamera: Bool){
+        
+        
+        print("Executing method, is camera \(isCamera) & is picture \(isPicture ?? true)")
+        
         guard let imageSaved = previewImage.image,
               // Compress image
               let imageSavedData: Data = imageSaved.jpegData(compressionQuality: 0.1) else {
+                  
                   return
               }
         
+        guard let currentVideoSavedUrl = currentVideoUrl,
+              let videoData: Data = try? Data(contentsOf: currentVideoSavedUrl) else {
+                  
+                  return
+              }
+
         SVProgressHUD.show()
         
         // Config to save picture
         let metaDataConfig = StorageMetadata()
-        metaDataConfig.contentType = "image/jpg"
+        metaDataConfig.contentType = self.isPicture ? "image/jpg" : "video/MP4"
         
         // Reference to storage
         let storage = Storage.storage()
         
         // Name the image
-        let imageName = Int.random(in: 100...1000)
+        let fileName = Int.random(in: 100...1000)
         
-        // Reference to bucket in Storage
-        let bucketRef = storage.reference(withPath: "tweets-photos/\(imageName).jpg")
+        let bucketRef = storage.reference(withPath: self.isPicture ? "tweets-photos/\(fileName).jpg" : "tweets-videos/\(fileName).mp4")
         
-        // Upload picture to Firebase Storage
+        print("Before: \(self.isPicture ?? true)")
+        
         DispatchQueue.global(qos: .background).async{
-            bucketRef.putData(imageSavedData, metadata: metaDataConfig) { (metadata: StorageMetadata?, error: Error?) in
+            bucketRef.putData(self.isPicture ? imageSavedData : videoData, metadata: metaDataConfig) { (metadata: StorageMetadata?, error: Error?) in
                 
                 DispatchQueue.main.async {
                     SVProgressHUD.dismiss()
@@ -156,57 +163,11 @@ class AddPostViewController: UIViewController {
                     }
                     bucketRef.downloadURL { (url: URL?,error: Error?) in
                         let downloadUrl = url?.absoluteString ?? ""
-                        self.savePost(imageUrl: downloadUrl, videoUrl: nil)
+                        self.savePost(imageUrl: self.isPicture ? downloadUrl : nil, videoUrl: self.isPicture ? nil : downloadUrl)
                     }
                 }
             }
         }
-        
-    }
-    
-    private func uploadVideo(){
-        // Make sure the video exists
-        guard let currentVideoSavedUrl = currentVideoUrl,
-              let videoData: Data = try? Data(contentsOf: currentVideoSavedUrl) else {
-                  return
-              }
-        
-        SVProgressHUD.show()
-        
-        // Config to save picture
-        let metaDataConfig = StorageMetadata()
-        metaDataConfig.contentType = "video/MP4"
-        
-        // Reference to storage
-        let storage = Storage.storage()
-        
-        // Name the video
-        let videoName = Int.random(in: 100...1000)
-        
-        // Reference to bucket in Storage
-        let bucketRef = storage.reference(withPath: "tweets-videos/\(videoName).mp4")
-        
-        // Upload video to Firebase Storage
-        DispatchQueue.global(qos: .background).async{
-            bucketRef.putData(videoData, metadata: metaDataConfig) { (metadata: StorageMetadata?, error: Error?) in
-                
-                DispatchQueue.main.async {
-                    SVProgressHUD.dismiss()
-                    
-                    if let error = error{
-                        NotificationBanner(title: "Error",
-                                           subtitle: error.localizedDescription,
-                                           style: .warning).show()
-                        return
-                    }
-                    bucketRef.downloadURL { (url: URL?,error: Error?) in
-                        let downloadUrl = url?.absoluteString ?? ""
-                        self.savePost(imageUrl: nil, videoUrl: downloadUrl)
-                    }
-                }
-            }
-        }
-        
     }
     
     private func savePost(imageUrl: String?, videoUrl: String?){
@@ -256,6 +217,7 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
         
         // Get the image
         if info.keys.contains(.originalImage){
+            self.isPicture = true
             previewImage.isHidden = false
             
             // Get the image from image picker
@@ -263,8 +225,10 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
         
         if info.keys.contains(.mediaURL), let recordedVideoUrl = (info[.mediaURL] as? URL)?.absoluteURL {
+            self.isPicture = false
             watchVideoButton.isHidden = false
             currentVideoUrl = recordedVideoUrl
+            
         }
     }
 }
