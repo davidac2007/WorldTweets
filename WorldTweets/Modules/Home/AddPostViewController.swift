@@ -29,6 +29,8 @@ class AddPostViewController: UIViewController {
     
     //MARK: - IBActions
     
+     var isPicture: Bool!
+    
     @IBAction func addPostAction(){
         uploadMedia(isCameraSource: isCamera)
     }
@@ -36,6 +38,7 @@ class AddPostViewController: UIViewController {
     @IBAction func dismissAction(){
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func openCameraAction() {
         
         let alert = UIAlertController(title: "Source",
@@ -43,10 +46,13 @@ class AddPostViewController: UIViewController {
                                       preferredStyle: UIAlertController.Style.actionSheet)
         
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+       
             self.openCamera()
+            
         }))
         
         alert.addAction(UIAlertAction(title: "Video", style: .default, handler: { _ in
+           
             self.openVideoCamera()
             
         }))
@@ -61,7 +67,7 @@ class AddPostViewController: UIViewController {
         guard let currentVideoURL = currentVideoUrl else{
             return
         }
-        
+
         let avPlayer = AVPlayer(url: currentVideoURL)
         let avPLayerController = AVPlayerViewController()
         
@@ -76,7 +82,6 @@ class AddPostViewController: UIViewController {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         watchVideoButton.isHidden = true
-        // Do any additional setup after loading the view.
     }
     
     private func openVideoCamera(){
@@ -86,17 +91,12 @@ class AddPostViewController: UIViewController {
         imagePicker?.cameraFlashMode = .off
         imagePicker?.cameraCaptureMode = .video
         imagePicker?.videoQuality = .typeMedium
-        imagePicker?.videoMaximumDuration = TimeInterval(5)
+        imagePicker?.videoMaximumDuration = TimeInterval(8)
         imagePicker?.allowsEditing = true
         imagePicker?.delegate = self
         
-        
-        guard let imagePicker = imagePicker else {
-            return
-        }
-        
+        guard let imagePicker = imagePicker else { return }
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
     private func openCamera(){
@@ -110,11 +110,10 @@ class AddPostViewController: UIViewController {
         guard let imagePicker = imagePicker else {
             return
         }
-        
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
+
     private func uploadMedia(isCameraSource: Bool){
 
         // Make sure the media file exists
@@ -125,18 +124,19 @@ class AddPostViewController: UIViewController {
         else {
             return
         }
-        
+
         SVProgressHUD.show()
         
         // Config to save media
         let metaDataConfig = StorageMetadata()
+
         
         // Specify content type
         metaDataConfig.contentType = isCameraSource ? "image/jpg" : "video/MP4"
         
         // Reference to storage
         let storage = Storage.storage()
-        
+
         // Name the media file
         let fileName = Int.random(in: 100...1000)
         
@@ -166,7 +166,6 @@ class AddPostViewController: UIViewController {
            
             
         }
-        
     }
     
     private func savePost(imageUrl: String?, videoUrl: String?){
