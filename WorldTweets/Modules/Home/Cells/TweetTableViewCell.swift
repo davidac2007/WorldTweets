@@ -18,6 +18,20 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var videoButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     
+//    Important
+    // Cells should never invoke view controllers
+    
+    @IBAction func openVideo() {
+        guard let videoUrl = videoUrl else {return}
+        needsToShowVideo?(videoUrl)
+    }
+    
+    // MARK: - Properties
+    
+    private var videoUrl: URL?
+    var needsToShowVideo: ((_ url: URL) -> Void)?
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -42,7 +56,7 @@ class TweetTableViewCell: UITableViewCell {
             tweetImageView.isHidden =  false
         }
         
-        
+        videoUrl = URL(string: post.videoUrl)
     }
     
 }

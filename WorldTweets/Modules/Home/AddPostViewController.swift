@@ -80,6 +80,7 @@ class AddPostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        previewImage.layer.cornerRadius = 10.0
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         watchVideoButton.isHidden = true
     }
@@ -102,7 +103,7 @@ class AddPostViewController: UIViewController {
     private func openCamera(){
         imagePicker = UIImagePickerController()
         imagePicker?.sourceType = .camera
-        imagePicker?.cameraFlashMode = .off
+        imagePicker?.cameraFlashMode = .auto
         imagePicker?.cameraCaptureMode = .photo
         imagePicker?.allowsEditing = true
         imagePicker?.delegate = self
@@ -145,8 +146,6 @@ class AddPostViewController: UIViewController {
         
         DispatchQueue.global(qos: .background).async {
             bucketRef.putData(mediaData, metadata: metaDataConfig) { (metadata: StorageMetadata?, error: Error?) in
-              
-                print("Is camera source: \(isCameraSource)")
                 DispatchQueue.main.async {
                     SVProgressHUD.dismiss()
                     
@@ -162,14 +161,10 @@ class AddPostViewController: UIViewController {
                     }
                 }
             }
-            
-           
-            
         }
     }
     
     private func savePost(imageUrl: String?, videoUrl: String?){
-        
         
         let request = PostTweetsRequest(text: postTextView.text,
                                         imageUrl: imageUrl,
@@ -200,7 +195,6 @@ class AddPostViewController: UIViewController {
                                    style: .warning).show()
             }
         }
-        
     }
 }
 
@@ -217,17 +211,15 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
         if info.keys.contains(.originalImage){
             self.isCamera = true
             previewImage.isHidden = false
-            
             // Get the image from image picker
             previewImage.image = info[.originalImage] as? UIImage
             currentImageUrl = previewImage.image?.jpegData(compressionQuality: 0.1)
-            
         }
         
         if info.keys.contains(.mediaURL), let recordedVideoUrl = (info[.mediaURL] as? URL)?.absoluteURL {
+            self.isCamera = false
             watchVideoButton.isHidden = false
             currentVideoUrl = recordedVideoUrl
-            self.isCamera = false
         }
     }
 }
