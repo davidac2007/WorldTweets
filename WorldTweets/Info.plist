@@ -46,5 +46,11 @@
     <string>We will use camera to post your tweet</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>We will use it to record videos for tweets</string>
+    
+    <key>NSLocationWhenInUsageDescription</key>
+    <string>We will use your current location for the tweet</string>
+    
+    <key>NSLocationAlwaysAndWhenInUsageDescription</key>
+    <string>We will use your current location for the tweet</string>
 </dict>
 </plist>
