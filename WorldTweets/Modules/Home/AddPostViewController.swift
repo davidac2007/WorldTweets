@@ -13,8 +13,9 @@ import FirebaseStorage
 import AVFoundation
 import AVKit
 import MobileCoreServices
+import CoreLocation
 
-class AddPostViewController: UIViewController {
+class AddPostViewController: UIViewController  {
     // MARK: - IBOutlets
     
     @IBOutlet weak var postTextView: UITextView!
@@ -26,6 +27,8 @@ class AddPostViewController: UIViewController {
     private var currentVideoUrl: URL?
     private var isCamera: Bool = true
     private var currentImageUrl: Data?
+    private var locationManager: CLLocationManager?
+    private var userLocation: CLLocation?
     
     //MARK: - IBActions
     
@@ -38,6 +41,24 @@ class AddPostViewController: UIViewController {
     @IBAction func dismissAction(){
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    private func requestLocation(){
+        // Make sure user has gps available
+        guard CLLocationManager.locationServicesEnabled() else {
+            return
+        }
+        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.startUpdatingLocation()
+    }
+    
+    
+    
     
     @IBAction func openCameraAction() {
         
@@ -83,6 +104,7 @@ class AddPostViewController: UIViewController {
         previewImage.layer.cornerRadius = 10.0
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         watchVideoButton.isHidden = true
+        requestLocation()
     }
     
     private func openVideoCamera(){
@@ -221,5 +243,17 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
             watchVideoButton.isHidden = false
             currentVideoUrl = recordedVideoUrl
         }
+    }
+}
+
+extension AddPostViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let bestLocation = locations.last else {
+            return
+        }
+        
+        // We got the user location
+        
+        userLocation = bestLocation
     }
 }
