@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapContainer: UIView!
     
     // MARK: - Properties
-    private var posts = [Post]()
+    var posts = [Post]()
     private var map: MKMapView?
     
     
@@ -21,12 +21,41 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupMap()
     }
     
     private func setupMap(){
         map = MKMapView(frame: mapContainer.bounds)
         mapContainer.addSubview(map ?? UIView())
+        setupMarkers()
     }
-
+    
+    private func setupMarkers(){
+        posts.forEach{ item in
+            let marker = MKPointAnnotation()
+            marker.coordinate = CLLocationCoordinate2D(latitude: item.location.latitude, longitude: item.location.longitude)
+            
+            marker.title = item.text
+            marker.subtitle = item.author.names
+            
+            map?.addAnnotation(marker)
+        }
+        
+        guard let lastPost = posts.last else {
+            return
+        }
+        
+        let lastPostLocation = CLLocationCoordinate2D(latitude: lastPost.location.latitude, longitude: lastPost.location.longitude)
+        
+        guard let heading = CLLocationDirection(exactly: 12) else {
+            return
+        }
+        
+        map?.camera = MKMapCamera(lookingAtCenter: lastPostLocation, fromDistance: 30, pitch: .zero, heading: heading)
+    }
 }

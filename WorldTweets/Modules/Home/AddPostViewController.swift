@@ -35,7 +35,8 @@ class AddPostViewController: UIViewController  {
      var isPicture: Bool!
     
     @IBAction func addPostAction(){
-        uploadMedia(isCameraSource: isCamera)
+        savePost(imageUrl: nil, videoUrl: nil)
+        // uploadMedia(isCameraSource: isCamera)
     }
     
     @IBAction func dismissAction(){

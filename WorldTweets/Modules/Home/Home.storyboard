@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" title="Tweets" id="dhb-fT-TEt">
                         <barButtonItem key="rightBarButtonItem" title="See Map" id="Gdk-cZ-acn">
                             <connections>
-                                <segue destination="5Os-Xr-Frd" kind="show" id="19d-Ks-JJ5"/>
+                                <segue destination="5Os-Xr-Frd" kind="show" identifier="showMap" id="19d-Ks-JJ5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

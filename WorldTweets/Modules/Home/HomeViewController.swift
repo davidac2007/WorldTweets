@@ -164,3 +164,15 @@ extension HomeViewController: UITableViewDataSource{
     }
     
 }
+
+// MARK : - Navigation
+extension HomeViewController{
+    // This would be called when moving between storyboards
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap", let mapViewController = segue.destination as?  MapViewController{
+            mapViewController.posts = dataSource.filter{
+                $0.hasLocation
+            }
+        }
+    }
+}
