@@ -187,11 +187,21 @@ class AddPostViewController: UIViewController  {
     }
     
     private func savePost(imageUrl: String?, videoUrl: String?){
+        // Create location request
+        
+        var postLocation: PostRequestLocation?
+        
+        if let userLocation = userLocation {
+            postLocation = PostRequestLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        }
+     
+ 
+        
         
         let request = PostTweetsRequest(text: postTextView.text,
                                         imageUrl: imageUrl,
                                         videoUrl: videoUrl,
-                                        location: nil)
+                                        location: postLocation)
         
         SVProgressHUD.show()
         
@@ -253,7 +263,6 @@ extension AddPostViewController: CLLocationManagerDelegate {
         }
         
         // We got the user location
-        
         userLocation = bestLocation
     }
 }

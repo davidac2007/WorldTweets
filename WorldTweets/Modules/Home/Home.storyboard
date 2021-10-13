@@ -58,7 +58,13 @@
                             <constraint firstItem="Odo-cL-O4p" firstAttribute="bottom" secondItem="UBi-kU-gbl" secondAttribute="bottom" constant="20" id="tre-bG-gTe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweets" id="dhb-fT-TEt"/>
+                    <navigationItem key="navigationItem" title="Tweets" id="dhb-fT-TEt">
+                        <barButtonItem key="rightBarButtonItem" title="See Map" id="Gdk-cZ-acn">
+                            <connections>
+                                <segue destination="5Os-Xr-Frd" kind="show" id="19d-Ks-JJ5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="GJq-Ng-hjp" id="Gtg-F4-0qg"/>
                     </connections>
@@ -176,7 +182,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4e9-ZD-7Qw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="390"/>
+            <point key="canvasLocation" x="2065" y="383"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Cwn-T5-Wnf">
+            <objects>
+                <viewController title="Map" id="5Os-Xr-Frd" customClass="MapViewController" customModule="WorldTweets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u6y-Uk-3ol">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0r-mC-LBt">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o0Z-yR-Aq2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h0r-mC-LBt" firstAttribute="trailing" secondItem="o0Z-yR-Aq2" secondAttribute="trailing" id="80z-t0-1Yv"/>
+                            <constraint firstItem="h0r-mC-LBt" firstAttribute="leading" secondItem="o0Z-yR-Aq2" secondAttribute="leading" id="YVJ-fh-Zhf"/>
+                            <constraint firstItem="h0r-mC-LBt" firstAttribute="top" secondItem="o0Z-yR-Aq2" secondAttribute="top" id="h3C-Iy-N3v"/>
+                            <constraint firstAttribute="bottom" secondItem="h0r-mC-LBt" secondAttribute="bottom" id="sTl-1o-ANz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="h3L-pa-T7c"/>
+                    <connections>
+                        <outlet property="mapContainer" destination="h0r-mC-LBt" id="Scv-fY-tQr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dum-SD-g2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2063.768115942029" y="-319.41964285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cb8-cB-Iax">
