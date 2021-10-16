@@ -10,6 +10,23 @@ import NotificationBannerSwift
 import Simple_Networking
 import SVProgressHUD
 
+// Create custom green for dark mode
+extension UIColor{
+    static let customGreen: UIColor = {
+        if #available(iOS 13.0, *) {
+            return UIColor { (trait: UITraitCollection) -> UIColor in
+                if trait.userInterfaceStyle == .dark {
+                    return .white
+                } else {
+                    return .green
+                }
+            }
+        } else {
+            return green
+        }
+    }()
+}
+
 class SignInViewController: UIViewController {
     // MARK: - Outlets
     
@@ -20,6 +37,9 @@ class SignInViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func signInButtonAction(){
+        
+        
+        
         view.endEditing(true)
         performLogin()
         
@@ -34,17 +54,21 @@ class SignInViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupUI(){
-        
+        signInButton.backgroundColor = UIColor.customGreen
         signInButton.layer.cornerRadius = 25
         emailTextField.autocorrectionType = .no
-
+        
+        //        if #available(iOS 13.0, *) {
+        //            overrideUserInterfaceStyle = .light
+        //        }
+        
     }
     
     private func performLogin(){
         
         func isValidEmail(_ email: String) -> Bool {
             let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-
+            
             let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
             return emailPred.evaluate(with: email)
         }
@@ -75,26 +99,26 @@ class SignInViewController: UIViewController {
             SVProgressHUD.dismiss()
             switch response {
                 // Success login
-                case .success(let user):
-                    NotificationBanner(subtitle: "Welcome \(user.user.names)",style: .success).show()
+            case .success(let user):
+                NotificationBanner(subtitle: "Welcome \(user.user.names)",style: .success).show()
                 defaults.set(email, forKey: "email")
                 let currentEmail = defaults.string(forKey: "email")
                 print("This is the current email: \(currentEmail ?? "")")
-                    // Perform login
-                    self.performSegue(withIdentifier: "showHome", sender: nil)
-                    SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
+                // Perform login
+                self.performSegue(withIdentifier: "showHome", sender: nil)
+                SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
                 // Unknown errors
-                case .error(let error):
-                    NotificationBanner(title: "Error",
-                                       subtitle: error.localizedDescription,
-                                       style: .danger).show()
-        
+            case .error(let error):
+                NotificationBanner(title: "Error",
+                                   subtitle: error.localizedDescription,
+                                   style: .danger).show()
+                
                 // Errrors from the server
-                case .errorResult(let entity):
-                    NotificationBanner(title: "Error",
-                                    subtitle: entity.error,
-                                    style: .warning).show()
-                  
+            case .errorResult(let entity):
+                NotificationBanner(title: "Error",
+                                   subtitle: entity.error,
+                                   style: .warning).show()
+                
             }
         }
     }
